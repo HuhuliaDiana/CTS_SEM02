@@ -24,7 +24,7 @@ public abstract class AplicantReader {
 			int varsta = input2.nextInt();
 			int punctaj = input2.nextInt();
 			int nr = input2.nextInt();
-			String[] vect = new String[5];
+			String[] vect = new String[nr];
 			for (int i = 0; i < nr; i++)
 				vect[i] = input2.next();
 			
