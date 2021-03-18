@@ -9,7 +9,7 @@ import java.util.Scanner;
 import ro.ase.cts.clase.Aplicant;
 import ro.ase.cts.clase.Student;
 
-public class StudentReader extends AplicantReader  {
+public class StudentReader extends AplicantReader {
 	public StudentReader(String fileName) {
 		super(fileName);
 		// TODO Auto-generated constructor stub
@@ -21,11 +21,11 @@ public class StudentReader extends AplicantReader  {
 		List<Aplicant> studenti = new ArrayList<Aplicant>();
 
 		while (input.hasNext()) {
-			Student student=new Student();
+			Student student = new Student();
 			super.readAplicant(input, student);
-			int an_studii = input.nextInt();
+			int anStudii = input.nextInt();
 			String facultate = (input.next()).toString();
-			student.setAn_studii(an_studii);
+			student.setanStudii(anStudii);
 			student.setFacultate(facultate);
 			studenti.add(student);
 		}

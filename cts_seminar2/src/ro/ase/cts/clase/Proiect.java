@@ -16,5 +16,5 @@ public class Proiect {
 		super();
 		this.pragAcceptare = pragAcceptare;
 	}
-	
+
 }
