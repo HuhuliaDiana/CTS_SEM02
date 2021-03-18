@@ -22,7 +22,13 @@ public class Main {
 
 		System.out.println(brokerLazy1.toString());
 		System.out.println(brokerLazy2.toString());
+		
+		//
+		Hardware hardware1=Hardware.getInstance("monitor", 550, "calculator");
+		Hardware hardware2=Hardware.getInstance("placa video", 680 , "laptop");
 
+		System.out.println(hardware1.toString());
+		System.out.println(hardware2.toString());
 
 	}
 
