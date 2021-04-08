@@ -27,10 +27,8 @@ public class ElevReader extends AplicantReader {
 
 			int clasa = input2.nextInt();
 			String tutore = input2.next();
-
 			elev.setClasa(clasa);
 			elev.setTutore(tutore);
-
 			elevi.add(elev);
 		}
 
