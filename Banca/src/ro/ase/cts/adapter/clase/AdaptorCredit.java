@@ -2,7 +2,6 @@ package ro.ase.cts.adapter.clase;
 
 public class AdaptorCredit implements CreditAbstract {
 
-	
 	private Leasing leasing;
 	
 	public AdaptorCredit(Leasing leasing) {
@@ -12,7 +11,6 @@ public class AdaptorCredit implements CreditAbstract {
 
 	@Override
 	public void oferaCredit(float suma) {
-		// TODO Auto-generated method stub
 		leasing.imprumuta();
 	}
 	

@@ -11,9 +11,12 @@ public class Main {
 	}
 	public static void main(String[] args) {
 		
+		//pb 5-D. Banca
+		
 		Leasing leasing=new Leasing(100,"Ion");//il voi adapta dandu l ca param adaptorului meu
 		//afiseazaInfomratiiCredit(leasing, leasing.getSuma());//nu se poate pt ca leasing nu e de tip creditabstract, deci e nev de un adapter
-		AdaptorCredit adaptor=new AdaptorCredit(leasing);
+		
+		AdaptorCredit adaptor=new AdaptorCredit(leasing);//adapter primeste ca param clasa utilizata deja de app existenta
 		adaptor.oferaCredit(100);//nu cont ce dau ca param pt ca oricum nu-l foloseste
 		
 

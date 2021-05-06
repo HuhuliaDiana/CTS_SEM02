@@ -18,7 +18,8 @@ public class RezervareBuilder implements AbstractBuilder {
 		rezervare.setMancareInclusa(mancareInclusa);
 		return this;
 		
-	}
+	}//return rezervarebuilder cu rezervare avand mancareinclusa=true
+	
 	public RezervareBuilder setScaunErgonomic(boolean scaunErgonomic) {
 		rezervare.setScaunErgonomic(scaunErgonomic);
 		return this;
@@ -46,8 +47,9 @@ public class RezervareBuilder implements AbstractBuilder {
 		
 	}
 
+	//de la AbstractBuilder
 	@Override
-	public Rezervare build() {
+	public Rezervare build() {//getProdus()
 		
 		return rezervare;
 	}

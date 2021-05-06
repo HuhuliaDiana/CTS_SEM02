@@ -5,10 +5,7 @@ public class BrokerTranzactieLazy {
 	private int vechime;
 	private int nrTranzactiiEfectuate;
 	
-	private static BrokerTranzactieLazy brokerLazy=null;//amanam apelul constructorului
-	public String getNume() {
-		return nume;
-	}
+	private static BrokerTranzactieLazy brokerLazy=null;//amanam apelul constructorului, static e imp ca sa chemam brokertrazy in getinstance()
 	
 	
 	private BrokerTranzactieLazy(String nume, int vechime, int nrTranzactiiEfectuate) {
@@ -21,6 +18,10 @@ public class BrokerTranzactieLazy {
 	public void setNume(String nume) {
 		this.nume = nume;
 	}
+	public String getNume() {
+		return nume;
+	}
+	
 	public int getVechime() {
 		return vechime;
 	}
@@ -47,7 +48,7 @@ public class BrokerTranzactieLazy {
 	}
 	public static synchronized BrokerTranzactieLazy getInstance(String nume, int vechime, int nrTranzactiiEfectuate) {
 		if(brokerLazy==null) {
-			brokerLazy=new BrokerTranzactieLazy(nume, vechime, nrTranzactiiEfectuate);
+			brokerLazy=new BrokerTranzactieLazy(nume, vechime, nrTranzactiiEfectuate);//obiectul este creat atunci cand este necesar!
 		}
 		return brokerLazy;
 	}

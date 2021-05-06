@@ -1,9 +1,12 @@
 package ro.ase.cts.clase;
 
 public class Client implements Flyweight{
+	
+	//informatiile care se repeta
 	private String nume;
 	private String nrTelefon;
 	private String email;
+	//
 	
 	
 	public Client(String nume, String nrTelefon, String email) {
@@ -30,9 +33,9 @@ public class Client implements Flyweight{
 
 	@Override
 	public void printeazaRezervare(Rezervare r) {
-		// TODO Auto-generated method stub
-		this.toString();
-		System.out.println(r);
+		
+		this.toString();//client
+		System.out.println(r);//rezervare
 		
 		
 	}

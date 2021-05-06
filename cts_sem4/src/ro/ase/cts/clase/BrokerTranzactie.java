@@ -4,7 +4,9 @@ public class BrokerTranzactie {
 	private String nume;
 	private int vechime;
 	private int nrTranzactiiEfectuate;
-	private static BrokerTranzactie broker=new BrokerTranzactie("gigica",10,100);
+	
+	//eager initialization
+	private static BrokerTranzactie broker=new BrokerTranzactie("gigica",10,100);//private static-the only instance of the class
 
 	public void setNume(String nume) {
 		this.nume = nume;
@@ -38,7 +40,7 @@ public class BrokerTranzactie {
 		return builder.toString();
 	}
 	
-	public static BrokerTranzactie getInstance() {
+	public static BrokerTranzactie getInstance() {//return the instance of the class
 		return broker;
 	}
 	

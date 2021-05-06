@@ -6,6 +6,7 @@ public class Bilet implements AbstractPrototype {
 	private String echipa1;
 	private String echipa2;
 	private String data;
+	
 	public Bilet(int codBilet, String echipa1, String echipa2, String data) {
 		super();
 		this.codBilet = codBilet;
@@ -14,8 +15,6 @@ public class Bilet implements AbstractPrototype {
 		this.data = data;
 	}
 	
-
-
 
 	public void setCodBilet(int codBilet) {
 		this.codBilet = codBilet;
@@ -45,7 +44,6 @@ public class Bilet implements AbstractPrototype {
 		newBilet.echipa1=this.echipa1;
 		newBilet.echipa2=this.echipa2;
 		newBilet.data=this.data;
-		
 		
 		return newBilet;
 	}

@@ -29,7 +29,6 @@ public class Element implements ComponentMeniu{
 
 	@Override
 	public void printeaza() {
-		// TODO Auto-generated method stub
 		
 	}
 

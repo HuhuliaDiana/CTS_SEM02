@@ -8,7 +8,8 @@ import ro.ase.cts.simplefactory.clase.TipPersonal;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
+		//simple factory necesita modificari in codul existent!
 		
 		try {
 			FactoryPersonal factory=new FactoryPersonal();
@@ -18,7 +19,6 @@ public class Main {
 			System.out.println(medic.toString());
 			System.out.println(asistent.toString());
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

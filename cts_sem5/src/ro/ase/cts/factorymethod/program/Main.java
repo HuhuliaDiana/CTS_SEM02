@@ -12,9 +12,7 @@ public class Main {//Clientul
 		PersonalSpital personal=factory.getPersonal(nume);
 		System.out.println(personal.toString());
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	public static void main(String[] args) {		
 		
 		printeazaPersonalSpital(new MedicFactory(), "Maria");
 		printeazaPersonalSpital(new AsistentFactory(), "Ion");
