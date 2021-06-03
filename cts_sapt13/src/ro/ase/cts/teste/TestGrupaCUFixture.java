@@ -1,9 +1,12 @@
-package ro.ase.cts.clase;
+package ro.ase.cts.teste;
 
 import static org.junit.Assert.*;
 
 import org.junit.Before;
 import org.junit.Test;
+
+import ro.ase.cts.clase.Grupa;
+import ro.ase.cts.clase.Student;
 
 public class TestGrupaCUFixture {
 

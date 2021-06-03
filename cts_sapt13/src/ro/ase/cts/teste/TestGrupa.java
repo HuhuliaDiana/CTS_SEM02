@@ -1,22 +1,31 @@
-package ro.ase.cts.clase;
+package ro.ase.cts.teste;
 
-import static org.junit.Assert.*;
+
+
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
 import org.junit.Test;
 
+import jdk.jfr.Category;
+import ro.ase.cts.categorii.GetPromovabilitateCategory;
+import ro.ase.cts.clase.Grupa;
+import ro.ase.cts.clase.Student;
+
 public class TestGrupa {
-
-
 	
 	//testam mai multe principii
 	
-	//right bicep
+	//right-bicep
 	@Test
 	public void testConstructorCorect() {
 		Grupa grupa=new Grupa(1083);
 		assertEquals(1083, grupa.getNrGrupa());
 	}
+	
+	//B- boundary conditions
+	//testam limita inferioara si superioara!
 	
 	@Test
 	public void testConstructorLimitaInferioara() {
@@ -30,10 +39,10 @@ public class TestGrupa {
 		assertEquals(1100, grupa.getNrGrupa());
 	}
 	
-	//test invers direction:
+	//test inverse direction:
 	//obtinem rezultatul si ne intoarcem la input
 	
-	//nu putem face cross check- putem in schimb sa facem la student:avem constructor cu parametru si fara, la cel fara setam parametrul folosind setterul
+	//nu putem face cross-check - putem in schimb sa facem la student:avem constructor cu parametru si fara, la cel fara setam parametrul folosind setterul
 	
 	//e-error condition
 	//eroarea IllegalArgument- cand dam un parametru gresit
@@ -51,25 +60,28 @@ public class TestGrupa {
 	}
 	
 	//principiul performance
-	//imi creaza ob in maxim juma de secunda
+	//imi creaza ob in maxim jumatate de secunda
+	
 	@Test(timeout=500)
 	public void testConstructorPerformanta() {
 		Grupa g=new Grupa(1085);
 	}
 	
-	//unele principii din correct sunt aceleasi cu cele din right bicep
+	//unele principii din correct sunt aceleasi cu cele din right-bicep
 	
 	//conformance- verif daca input sau output respecta anumite formate
-	//am putea verif daca nr grupei are 4 cifre, am verif deja daca e mai mare ca 1000 si mai mic ca 1100
+	//am putea verif daca nr grupei are 4 cifre, am verif deja asta: daca e mai mare ca 1000 si mai mic ca 1100
 	
 	//ordering: unde avem liste sau altele
 	//ex:id urile sa fie in ordine
+	//avem lista dar nu e nevoie sa fie ordonata
 	
 	
-	//range- stabileste interval (1000-1100), testeaza cu valori din interiorul intervalului(am fct etstul de right mai sus), dupa sa facem teste exact pt aceste limite(am fct mai sus boundering, cele 2 teste
+	//range- stabileste interval (1000-1100), testeaza cu valori din interiorul intervalului(am fct testul de right mai sus),
+	//dupa sa facem teste exact pt aceste limite(am fct mai sus boundering, cele 2 teste)
 	//sa testam cu valori din afara intervalului(am fct la error condition cele 2 teste)- toate cele 5 teste facute intra la range
 	
-	//reference
+	//reference -??????????????????????????
 	//avem ceva extern? nu! nici lista nu e extern!
 	
 	//existence
@@ -83,11 +95,12 @@ public class TestGrupa {
 	}
 	
 	//cardinality
-	//regula 0-1-n, cand nu avem elemente, cand avem unul sau cand avem mai multe
+	//regula 0-1-n: cand nu avem elemente, cand avem unul sau cand avem mai multe
 	//colectia doar are spatiu alocat, nu adauga studenti in lista
 	
 	//time
 	//acopera si performane de la right bicep;nu avem ordine in realizarea constructorului
+	
 	
 	//multe principii din correct se aplica pt liste!
 	//mereu aplicam aceste principii si mai testam si altele pe care consideram noi ca treb sa le testam
@@ -97,6 +110,7 @@ public class TestGrupa {
 	//right bicep
 	
 	@Test
+	@org.junit.experimental.categories.Category(GetPromovabilitateCategory.class)
 	public void testPromovabilitateRight() {//integralisti
 		Grupa grupa=new Grupa(1084);
 		for(int i=0;i<3;i++) {
@@ -117,6 +131,7 @@ public class TestGrupa {
 	//limtele sunt 0-niciun integrlaist; si 1-toti sunt integralisti
 	
 	@Test
+	@org.junit.experimental.categories.Category(GetPromovabilitateCategory.class)
 	public void testPromovabilitateLowerBoundary() {
 		Grupa grupa=new Grupa(1084);
 		for(int i=0;i<3;i++) {
@@ -126,9 +141,6 @@ public class TestGrupa {
 		}
 		float promovabilitate=0f;
 		assertEquals(promovabilitate, grupa.getPromovabilitate(),0.1);
-
-		
-		
 		
 	}
 	@Test
@@ -141,9 +153,6 @@ public class TestGrupa {
 		}
 		float promovabilitate=1f;
 		assertEquals(promovabilitate, grupa.getPromovabilitate(),0.1);
-
-		
-		
 	}
 	
 	//cross check
